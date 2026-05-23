@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Active Download Links</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Active Download Links</h1>
+        
+        {% if links %}
+            <table class="links-table">
+                <tr>
+                    <th>Filename</th>
+                    <th>Expires At</th>
+                    <th>Protection</th>
+                    <th>Download Link</th>
+                </tr>
+                {% for link in links %}
+                <tr>
+                    <td>{{ link.filename }}</td>
+                    <td>{{ link.expires_at }}</td>
+                    <td>{% if link.has_password %}Password{% else %}None{% endif %}</td>
+                    <td><a href="{{ link.download_url }}">Download</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No active download links.</p>
+        {% endif %}
+        
+        <p><a href="/">Upload a File</a></p>
+    </div>
+
+</body>
+</html>

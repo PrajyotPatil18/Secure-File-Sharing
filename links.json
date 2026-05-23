@@ -1,0 +1,35 @@
+{
+  "4KTfrwdLJNoG7pFqR5PkNg": {
+    "filename": "lululu.jpg",
+    "encrypted_path": "encrypted/80b3fc480fa886c3_lululu.jpg",
+    "original_size": 8074,
+    "upload_time": 1778478785.8701046,
+    "expires_at": 1778482385.8700154,
+    "has_password": true,
+    "key_hex": null,
+    "salt_hex": "d78683d655ade79a6feadf2595ae59ce",
+    "expiry_hours": 1
+  },
+  "a2FTPFFoRXyizNglbIkzHA": {
+    "filename": "lululu.jpg",
+    "encrypted_path": "encrypted/370f5a16237ab658_lululu.jpg",
+    "original_size": 8074,
+    "upload_time": 1778478808.0157769,
+    "expires_at": 1778565208.0156767,
+    "has_password": true,
+    "key_hex": null,
+    "salt_hex": "54567a13bb25271be15c38e447dfe361",
+    "expiry_hours": 24
+  },
+  "aL1pQcVKO9FhS0O8pkQfyQ": {
+    "filename": "abandoned-trainstation.jpg",
+    "encrypted_path": "encrypted/2069fda7ad015179_abandoned-trainstation.jpg",
+    "original_size": 1079842,
+    "upload_time": 1778479759.4275768,
+    "expires_at": 1778483359.4274626,
+    "has_password": true,
+    "key_hex": null,
+    "salt_hex": "3f0d4aef1d47ded8d2897661c368e8c6",
+    "expiry_hours": 1
+  }
+}

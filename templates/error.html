@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Error</h1>
+        <div class="flash error">{{ message }}</div>
+        
+        <p><a href="/">Upload a File</a></p>
+        <p><a href="/links">View Active Links</a></p>
+    </div>
+
+</body>
+</html>

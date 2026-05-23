@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Successful</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="matrix-bg" id="matrixBg"></div>
+    <div class="container">
+        <h1>File Uploaded Successfully</h1>
+        
+        <p><strong>Filename:</strong> {{ filename }}</p>
+        <p><strong>Expires in:</strong> {{ expiry_hours }} hours</p>
+        {% if has_password %}
+            <p><strong>Protection:</strong> Password protected</p>
+        {% else %}
+            <p><strong>Protection:</strong> No password</p>
+        {% endif %}
+        
+        <h3>Download Link:</h3>
+        <div class="download-link-container">
+            <input type="text" id="downloadLink" value="{{ download_url }}" readonly class="download-link-input">
+            <button class="copy-btn" onclick="copyLink()">Copy</button>
+        </div>
+        <p><a href="{{ download_url }}">Download Page</a></p>
+        
+        <p><a href="/">Upload Another File</a></p>
+        <p><a href="/links">View Active Links</a></p>
+    </div>
+
+    <script>
+        function copyLink() {
+            const copyBtn = document.querySelector('.copy-btn');
+            const downloadLink = document.getElementById('downloadLink');
+            
+            downloadLink.select();
+            downloadLink.setSelectionRange(0, 99999);
+            
+            navigator.clipboard.writeText(downloadLink.value).then(() => {
+                copyBtn.textContent = 'Copied!';
+                copyBtn.classList.add('copied');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download {{ filename }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Download File</h1>
+        
+        <p><strong>Filename:</strong> {{ filename }}</p>
+        <p><strong>Expires in:</strong> {{ expiry_hours }} hours</p>
+        
+        {% if has_password %}
+            <h3>Password Required</h3>
+            <form method="post" action="/download/{{ link_id }}/file">
+                <p>
+                    <label for="password">Enter password:</label><br>
+                    <input type="password" name="password" required>
+                </p>
+                <p>
+                    <input type="submit" value="Download File">
+                </p>
+            </form>
+        {% else %}
+            <h3>Ready to Download</h3>
+            <form method="post" action="/download/{{ link_id }}/file">
+                <p>
+                    <input type="submit" value="Download File">
+                </p>
+            </form>
+        {% endif %}
+        
+        <p><a href="/">Upload a File</a></p>
+    </div>
+
+</body>
+</html>
